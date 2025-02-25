@@ -1,0 +1,44 @@
+import React from "react";
+import {cn} from '@/lib/utils'
+import Image from "next/image";
+import { Button } from "../ui";
+import {useTranslations} from 'next-intl';
+
+
+interface Props {
+    className?: string
+}
+
+export const Header: React.FC<Props> = ({className}) => {
+    const t = useTranslations('Home');
+
+    return (
+        <header className={cn('fixed w-full h-12 bg-zinc-50/80 flex flex-col items-center backdrop-blur-xl', className)}>
+            <div className={cn('w-full h-full px-3 flex items-center justify-between max-w-5xl', className)}>
+                <Image src={"/logo.png"} alt={""} width={32} height={32} />
+                <div className={cn('h-full items-center hidden sm:flex *:text-foreground', className)}>
+                    <Button variant={'link'}>{t('home')}</Button>
+                    <Button variant={'link'}>{t('courses')}</Button>
+                    <Button variant={'link'}>{t('services')}</Button>
+                    <Button variant={'link'}>{t('contact')}</Button>
+                    <Button variant={'link'}>{t('about')}</Button>
+                </div>
+                <Button size={'sm'} className={cn('hidden sm:inline sm:h-9 sm:px-4 sm:py-2 rounded-full sm:text-sm', className)} variant={'default'}>{t('login')}</Button>
+                <div className={cn('sm:hidden h-full flex', className)}>
+                    <button className={cn('h-full px-2 flex items-center justify-center')}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-log-in">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                            <polyline points="10 17 15 12 10 7"/>
+                            <line x1="15" x2="3" y1="12" y2="12"/>
+                        </svg>
+                    </button>
+                    <button className={cn('h-full px-2 flex items-center justify-center', className)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-6 aspect-square">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+    )
+}

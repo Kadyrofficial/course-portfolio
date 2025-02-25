@@ -1,0 +1,11 @@
+{
+    "Home": {
+        "title": "Hello world!",
+        "login": "Login",
+        "home": "Home",
+        "courses": "Courses",
+        "services": "Services",
+        "contact": "Contact",
+        "about": "About"
+    }
+}
