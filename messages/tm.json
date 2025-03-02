@@ -1,6 +1,21 @@
 {
-    "Home": {
-        "title": "Hello world!",
-        "about": "Go to the about page"
+    "HomePage": {
+        "login": "Içeri girmek",
+        "heading1": "Hi I'm Kadyr",
+        "heading2": "German Language teacher",
+        "heading3": "IWS Online School empowers students to discover their strengths, create their future, and lead with knowledge and confidence in a dynamic world.",
+        "about_me": "Men barada",
+        "courses": "Kurslar",
+        "apply_now": "Ýazylmak",
+        "services": "Hyzmatlar",
+        "blogs": "Bloglar",
+        "contact": "Habarlaşmak",
+        "form_title": "Meniň bilen habarlaşyň",
+        "name": "Adyňyz",
+        "email": "Email",
+        "phone_number": "Telefon belgiňiz",
+        "send": "Ibermek",
+        "social_media": "Sosial media",
+        "faq": "FAQ"
     }
 }

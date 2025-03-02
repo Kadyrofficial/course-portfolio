@@ -1,14 +1,21 @@
 import {useTranslations} from 'next-intl';
 import {Link} from '@/i18n/routing';
-import { Courses } from '@/components/shared';
+import { Services, Blogs, Courses, Home, Contact, Footer } from '@/components/shared';
+import { FAQ } from '@/components/shared/faq';
 
 
-export default function Home() {
-    const t = useTranslations('Home');
+export default function HomePage() {
+    const t = useTranslations('HomePage');
 
     return (
         <>
+            <Home />
             <Courses />
-        </>
+            <Services />
+            <Blogs />
+            <Contact />
+            <FAQ />
+            <Footer />
+       </>
     );
 }

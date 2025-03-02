@@ -2,7 +2,9 @@ import React from "react";
 import {cn} from '@/lib/utils'
 import Image from "next/image";
 import { Button } from "../ui";
-import {useTranslations} from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
+import { Link } from "@/i18n/routing";
+import { headerData } from "./data";
 
 
 interface Props {
@@ -10,18 +12,22 @@ interface Props {
 }
 
 export const Header: React.FC<Props> = ({className}) => {
-    const t = useTranslations('Home');
+    const t = useTranslations('HomePage');
+    const locale = useLocale()
 
     return (
-        <header className={cn('fixed w-full h-12 bg-zinc-50/80 flex flex-col items-center backdrop-blur-xl', className)}>
-            <div className={cn('w-full h-full px-3 flex items-center justify-between max-w-5xl', className)}>
+        <header className={cn('fixed w-full h-12 bg-zinc-50/80 flex flex-col items-center backdrop-blur-xl z-50', className)}>
+            <div className={cn('w-full h-full px-3 flex items-center justify-between max-w-6xl', className)}>
                 <Image src={"/logo.png"} alt={""} width={32} height={32} />
-                <div className={cn('h-full items-center hidden sm:flex *:text-foreground', className)}>
-                    <Button variant={'link'}>{t('home')}</Button>
-                    <Button variant={'link'}>{t('courses')}</Button>
-                    <Button variant={'link'}>{t('services')}</Button>
-                    <Button variant={'link'}>{t('contact')}</Button>
-                    <Button variant={'link'}>{t('about')}</Button>
+                <div className={cn('h-full items-center hidden sm:flex *:text-foreground', className)}> 
+                    {headerData.map((item) => {
+                        const titleKey = `title_${locale}` as keyof typeof item;
+                        return (
+                            <Link key={item.key} href={item.link}>
+                                <Button variant={'link'} className={cn('text-foreground')}>{item[titleKey]}</Button>
+                            </Link>
+                        )
+                    })}
                 </div>
                 <Button size={'sm'} className={cn('hidden sm:inline sm:h-9 sm:px-4 sm:py-2 rounded-full sm:text-sm', className)} variant={'default'}>{t('login')}</Button>
                 <div className={cn('sm:hidden h-full flex', className)}>

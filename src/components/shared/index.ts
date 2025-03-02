@@ -1,2 +1,7 @@
 export { Header } from './header'
 export { Courses } from './courses'
+export { Home } from './home'
+export { Services } from './services'
+export { Blogs } from './blogs'
+export { Contact } from './contact'
+export { Footer } from './footer'

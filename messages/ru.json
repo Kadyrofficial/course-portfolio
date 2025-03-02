@@ -1,11 +1,21 @@
 {
-    "Home": {
-        "title": "Hello world!",
-        "login": "Login",
-        "home": "Home",
-        "courses": "Courses",
-        "services": "Services",
-        "contact": "Contact",
-        "about": "About"
+    "HomePage": {
+        "login": "Вход",
+        "heading1": "Hi I'm Kadyr",
+        "heading2": "German Language teacher",
+        "heading3": "IWS Online School empowers students to discover their strengths, create their future, and lead with knowledge and confidence in a dynamic world.",
+        "about_me": "О себе",
+        "courses": "Курсы",
+        "apply_now": "Подать заявку",
+        "services": "Услуги",
+        "blogs": "Блоги",
+        "contact": "Связаться",
+        "form_title": "Свяжитесь со мной",
+        "name": "Имя",
+        "email": "Email",
+        "phone_number": "Номер телефона",
+        "send": "Отправлять",
+        "social_media": "Социальные сети",
+        "faq": "FAQ"
     }
 }
